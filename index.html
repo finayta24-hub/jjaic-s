@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | JJAI Collection & Services</title>
+  <style>
+    :root {
+      --navy: #0f294a;
+      --blue: #1d4ed8;
+      --gold: #d97706;
+      --gold-light: #fef3c7;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; }
+    
+    /* Header & Nav */
+    header { background: var(--navy); color: var(--white); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .brand h1 { font-size: 1.4rem; letter-spacing: 0.5px; color: #fbbf24; }
+    .brand span { font-size: 0.85rem; color: #e2e8f0; display: block; }
+    nav a { color: var(--white); text-decoration: none; margin-left: 1.2rem; font-weight: 500; font-size: 0.95rem; }
+    nav a:hover { color: #fbbf24; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #0f294a 0%, #1e40af 100%); color: var(--white); text-align: center; padding: 4rem 5%; }
+    .hero .badge { background: #fbbf24; color: #0f294a; padding: 0.3rem 0.9rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 1rem; }
+    .hero h2 { font-size: 2.3rem; margin-bottom: 0.8rem; }
+    .hero p { max-width: 680px; margin: 0 auto 1.5rem; font-size: 1.1rem; color: #e2e8f0; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 0.3rem; transition: 0.2s; }
+    .btn-gold { background: #fbbf24; color: #0f294a; }
+    .btn-gold:hover { background: #f59e0b; }
+    .btn-outline { border: 2px solid var(--white); color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--navy); }
+
+    /* Sections */
+    section { padding: 3.5rem 5%; max-width: 1200px; margin: auto; }
+    .section-title { text-align: center; margin-bottom: 2.5rem; }
+    .section-title h2 { font-size: 1.9rem; color: var(--navy); }
+    .section-title p { color: #64748b; }
+
+    /* Services Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--white); border-radius: 10px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-top: 5px solid var(--blue); }
+    .card.pink { border-top-color: #db2777; }
+    .card.green { border-top-color: #059669; }
+    .card.orange { border-top-color: #ea580c; }
+    .card.purple { border-top-color: #7c3aed; }
+    .card h3 { color: var(--navy); margin-bottom: 0.8rem; font-size: 1.25rem; }
+    .card ul { list-style: none; }
+    .card ul li { padding: 0.45rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; }
+    .card ul li:last-child { border-bottom: none; }
+    .card strong { color: #0f172a; }
+
+    /* Bundle Banner */
+    .bundle-box { background: var(--gold-light); border-left: 6px solid var(--gold); padding: 1.8rem; border-radius: 8px; margin-top: 2rem; text-align: center; }
+    .bundle-box h3 { color: #92400e; margin-bottom: 0.4rem; }
+
+    /* Quote Form */
+    .quote-container { background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); max-width: 750px; margin: auto; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+    .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.5rem; margin-top: 0.5rem; }
+    .checkbox-grid label { font-weight: 400; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; }
+    .checkbox-grid input { width: auto; }
+
+    /* Footer */
+    footer { background: var(--navy); color: var(--white); padding: 2.5rem 5%; margin-top: 3rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: auto; }
+    footer h4 { color: #fbbf24; margin-bottom: 0.6rem; }
+    footer p, footer a { color: #cbd5e1; font-size: 0.92rem; text-decoration: none; display: block; margin-bottom: 0.3rem; }
+    .copyright { text-align: center; border-top: 1px solid #1e3a5f; margin-top: 1.5rem; padding-top: 1rem; font-size: 0.85rem; color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <h1>JJAI COLLECTION & SERVICES</h1>
+      <span>Your All-In-One Solution! • Quality • Creativity • Reliability</span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#quote">Book / Quote</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="home">
+    <div class="badge">Quality • Creativity • Reliability</div>
+    <h2>Your All-In-One Solution in Windhoek</h2>
+    <p>From professional training, graphic design, and photography to driving lessons, cross-border imports, catering, beauty, and cleaning—we deliver everything you need under one roof.</p>
+    <a href="#services" class="btn btn-gold">Explore Our 5 Divisions</a>
+    <a href="https://wa.me" target="_blank" class="btn btn-outline">WhatsApp: 081 851 8618</a>
+  </div>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>Our 5 Core Service Divisions</h2>
+      <p>Click "Book / Quote" below to combine multiple services into one convenient package.</p>
+    </div>
+
+    <div class="grid">
+      <!-- 1 -->
+      <div class="card">
+        <h3>1. Professional Training</h3>
+        <ul>
+          <li><strong>Trading Guidance:</strong> Trade with confidence using the <em>ultravplsystem</em> platform & guidance on buying USD online for trading.</li>
+          <li><strong>After-School Help:</strong> Dedicated assignment assistance & academic tutoring for learners.</li>
+        </ul>
+      </div>
+
+      <!-- 2 -->
+      <div class="card pink">
+        <h3>2. Graphic Design & Printing</h3>
+        <ul>
+          <li><strong>Fliers & Posters:</strong> Eye-catching designs for businesses and all events.</li>
+          <li><strong>Wedding Cards:</strong> Custom invitations & elegant wedding stationery.</li>
+          <li><strong>Canvas Prints:</strong> High-quality photo prints available in all sizes.</li>
+          <li><strong>Booklet Design:</strong> Professional reports, brochures, and manuals.</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="card green">
+        <h3>3. Media & Photography</h3>
+        <ul>
+          <li><strong>Video & Photo Editing:</strong> Creative content creation and post-production.</li>
+          <li><strong>Photoshoots:</strong> Professional studio & outdoor location shoots.</li>
+          <li><strong>Event Coverage:</strong> Full coverage for weddings, graduations, and corporate events.</li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div class="card orange">
+        <h3>4. Logistics & Services</h3>
+        <ul>
+          <li><strong>Driving School:</strong> Learn to drive safely with full learner & driver license preparation.</li>
+          <li><strong>Import / Ordering Goods:</strong> Reliable sourcing and ordering of goods from South Africa & Angola.</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="card purple">
+        <h3>5. Event & Wellness</h3>
+        <ul>
+          <li><strong>Catering Services:</strong> Delicious event catering, buffets, and custom menus.</li>
+          <li><strong>Beauty Services:</strong> Complete hair styling, makeup, and nail care.</li>
+          <li><strong>Cleaning Services:</strong> Thorough post-event cleanup & residential house cleaning.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bundle-box">
+      <h3>Planning a Wedding, Graduation, or Corporate Event?</h3>
+      <p>Save time and money by bundling your <strong>Invitation Cards, Photography, Catering, Hair & Makeup, and Post-Event Cleaning</strong> into one custom JJAI package!</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About JJAI Collection & Services</h2>
+      <p>Owned and led by Josefina Iikuyu • Based at 18 Independence Ave, Windhoek [0.1.2]</p>
+    </div>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      JJAI Collection & Services was founded to make everyday life and special milestones easier for individuals, students, families, and businesses in Namibia. Instead of dealing with five different service providers, our clients enjoy one reliable partner committed to quality workmanship, creative solutions, and on-time delivery.
+    </p>
+  </section>
+
+  <section id="quote">
+    <div class="section-title">
+      <h2>Request a Service or Custom Quote</h2>
+      <p>Select the services you need and send your request directly to our WhatsApp team.</p>
+    </div>
+
+    <div class="quote-container">
+      <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+        <div class="form-group">
+          <label for="clientName">Your Name</label>
+          <input type="text" id="clientName" required placeholder="Enter your full name" />
+        </div>
+        <div class="form-group">
+          <label for="clientPhone">Your Phone / WhatsApp Number</label>
+          <input type="tel" id="clientPhone" required placeholder="e.g. 081 234 5678" />
+        </div>
+        <div class="form-group">
+          <label>Select Services Needed:</label>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="svc" value="Trading / After-School Help"> Professional Training</label>
+            <label><input type="checkbox" name="svc" value="Graphic Design & Printing"> Graphic Design & Printing</label>
+            <label><input type="checkbox" name="svc" value="Media & Photography"> Media & Photography</label>
+            <label><input type="checkbox" name="svc" value="Driving School"> Driving School</label>
+            <label><input type="checkbox" name="svc" value="Import/Ordering (SA & Angola)"> Import Goods (SA/Angola)</label>
+            <label><input type="checkbox" name="svc" value="Catering Services"> Catering Services</label>
+            <label><input type="checkbox" name="svc" value="Beauty (Hair/Makeup/Nails)"> Beauty Services</label>
+            <label><input type="checkbox" name="svc" value="Cleaning Services"> Cleaning Services</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="details">Event Date or Project Details</label>
+          <textarea id="details" rows="3" placeholder="Tell us your preferred date, quantities, or questions..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%; border:none; cursor:pointer; font-size:1rem;">Send Inquiry via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <h4>JJAI Collection & Services</h4>
+        <p>Your All-In-One Solution!</p>
+        <p>18 Independence Ave, Windhoek, Namibia [0.1.2]</p>
+        <p>Owner: Josefina Iikuyu [0.1.2]</p>
+      </div>
+      <div>
+        <h4>Contact Us Today!</h4>
+        <p>Phone 1: 081 851 8618</p>
+        <p>Phone 2: 081 641 6412</p>
+        <p>Mon–Sun: 08:00 – 20:00</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#services">Our Services</a>
+        <a href="#about">About Us</a>
+        <a href="#quote">Request a Quote</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 JJAI Collection & Services. All rights reserved. [0.1.2]
+    </div>
+  </footer>
+
+  <script>
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const phone = document.getElementById('clientPhone').value;
+      const details = document.getElementById('details').value;
+      const checked = Array.from(document.querySelectorAll('input[name="svc"]:checked')).map(cb => cb.value);
+      const servicesText = checked.length ? checked.join(', ') : 'General Inquiry';
+      
+      const message = `Hello JJAI Collection & Services!%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Services:* ${encodeURIComponent(servicesText)}%0A*Details:* ${encodeURIComponent(details)}`;
+      window.open(`https://wa.me{message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
